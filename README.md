@@ -158,7 +158,6 @@ Structural tags are rather unsuitable to contain a type prefix:
 - nav
 - section
 
-
 Functional classes
 ------------------
 
@@ -195,6 +194,50 @@ Syntax: <code>.has&#95;action</code> or <code>.has&#95;context</code>
 <strong>Important:</strong>
 
 Functional classes should never have CSS declarations.
+
+Mixin classes
+-------------
+
+Classnames which represented the state or type of a styled tag.
+
+Typically use to abstract styles of child nodes (e.g. list of tabs, breadcrumb, etc.) or fix older ie browser (e.g. :last-child = IE7/8)
+
+Syntax: <code>.is&#95;active</code> or <code>.is&#95;first</code>
+
+<table>
+	<thead>
+		<tr>
+			<th>Prefix</th>
+			<th>Tags</th>
+			<th>Example</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>.is</td>
+			<td>*</td>
+			<td>.is_active, .is_focus, .is_hover, .is_link, .is_visited</td>
+		</tr>
+		<tr>
+			<td>.is</td>
+			<td>*</td>
+			<td>.is_first, .is_second, ..., .is_last</td>
+		</tr>
+	</tbody>
+</table>
+
+<strong>Important:</strong>
+
+Never use it to overqualify styles and think about adjoining classes.
+
+CSS:
+
+<pre>/* bad */
+div > p:last-child {padding-bottom:12px}
+
+/* good */
+.box_content .is_last {padding-bottom:12px}
+</pre>
 
 
 Example
