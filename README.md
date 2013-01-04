@@ -265,8 +265,10 @@ div > p:last-child { ... }
 </pre>
 
 
-Example
--------
+Examples
+--------
+
+> working with structural classes:
 
 A class <code>.box&#95;content</code> provides the information of a styled <code>div</code> tag located inside a structural <code>.content</code> container.
 
@@ -323,6 +325,43 @@ CSS:
 }
 </pre>
 
+> working with functional classes:
+
+HTML:
+
+<pre>&lt;ul class="list_navigation js_click"&gt;
+	&lt;li class="item_tab has_childs"&gt; ... &lt;/li&gt;
+&lt;/ul&gt;
+
+// or
+
+&lt;ul id="js_click" class="box_content"&gt; 
+   &lt;li class="item_tab has_childs"&gt; ... &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+
+CSS:
+
+<pre>/* Rule: don't style functional classes */
+.js_click, .has_childs { ... }
+
+/* better */
+.list_navigation .item_tab { ... }
+</pre>
+
+
+jQuery:
+
+<pre>jQuery(function ($) {	
+	$('.js_click, #js_click')
+		.each(function () {
+			
+			return $(this)
+				.doSomething( ... );
+		});
+});
+</pre>
 
 Conclusion
 ----------
