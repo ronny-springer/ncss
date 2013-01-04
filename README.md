@@ -115,6 +115,11 @@ Syntax: <code>.type</code>, <code>.type&#95;context</code> or <code>.type&#95;co
 			<td>.label_search</td>
 		</tr>
 		<tr>
+			<td>.layout</td>
+			<td>body</td>
+			<td>.layout_landingpages</td>
+		</tr>
+		<tr>
 			<td>.link</td>
 			<td>a</td>
 			<td>.link_action</td>
