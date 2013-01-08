@@ -200,10 +200,10 @@ Syntax: <code>.has&#95;action</code> or <code>.has&#95;context</code>
 
 Functional classes should never have CSS declarations.
 
-State classes
--------------
+State class name addition
+-------------------------
 
-Classnames which represented the state or type of a styled tag.
+Class names which represent the state or type of a tag.
 
 Typically use to abstract styles of child nodes (e.g. list of tabs, breadcrumb, etc.) or fix older ie browser (e.g. :last-child = IE7/8)
 
@@ -234,6 +234,16 @@ Syntax: <code>.type_state</code> or <code>.type_context_state</code>
 			<td>.item_first</td>
 		</tr>
 		<tr>
+			<td>_second</td>
+			<td>*</td>
+			<td>.item_second</td>
+		</tr>
+		<tr>
+			<td>_third</td>
+			<td>*</td>
+			<td>.item_third</td>
+		</tr>
+		<tr>
 			<td>_last</td>
 			<td>*</td>
 			<td>.item_last</td>
@@ -244,6 +254,7 @@ Syntax: <code>.type_state</code> or <code>.type_context_state</code>
 <strong>Important:</strong>
 
 Never use it to overqualify styles and think about adjoining classes.
+Never use the numeric class additions for styling each tag individually.
 
 CSS:
 
