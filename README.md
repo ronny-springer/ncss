@@ -219,14 +219,15 @@ Syntax: <code>.type_state</code> or <code>.type_context_state</code>
 	</thead>
 	<tbody>
 		<tr>
+			<td colspan="3">Action Additions</td>
+		</tr>
+		<tr>
 			<td>_active</td>
 			<td>*</td>
 			<td>.item_active</td>
 		</tr>
 		<tr>
-			<td>_inactive</td>
-			<td>*</td>
-			<td>.item_inactive</td>
+			<td colspan="3">Positional Additions</td>
 		</tr>
 		<tr>
 			<td>_first</td>
@@ -248,18 +249,29 @@ Syntax: <code>.type_state</code> or <code>.type_context_state</code>
 			<td>*</td>
 			<td>.item_last</td>
 		</tr>
+		<tr>
+			<td>_even</td>
+			<td>*</td>
+			<td>.item_even</td>
+		</tr>
+		<tr>
+			<td>_odd</td>
+			<td>*</td>
+			<td>.item_odd</td>
+		</tr>
 	</tbody>
 </table>
 
 <strong>Important:</strong>
 
 Never use it to overqualify styles and think about adjoining classes.
+
 Never use the numeric class additions for styling each tag individually.
 
 CSS:
 
 <pre>/* bad */
-div > p:last-child { ... }
+div p:last-child { ... }
 
 /* good */
 .box_content .text_last { ... }
@@ -271,8 +283,12 @@ div > p:last-child { ... }
 /* active */
 .list_breadcrump .item_tab_active { ... } // if you click or hover.
 
-/* inactive */
-.list_breadcrump .item_tab_inactive { ... } // if it's visited.
+
+/* even */
+.table_results .item_even { ... }
+
+/* odd */
+.table_results .item_odd { ... }
 </pre>
 
 
